@@ -19,7 +19,7 @@ requirements.txt            Python 3.10、CUDA 12.8 运行依赖锁定
 LICENSE / Notice.txt        上游许可证与声明
 ```
 
-`scripts/` 只保留当前训练、测试入口。上游其他框架代码保留在 `verl/`；历史 `examples/`、`docs/` 不作为本项目当前实验启动说明。无需模型权重、Conda环境或checkpoint进入Git仓库。
+`scripts/` 只保留当前训练、测试入口。已移除上游示例、通用文档、Docker配置、项目网页、论文图表及通用测试；保留 `verl/` 训练框架、当前方法检查工具、数据准备代码与上游许可证。运行依赖统一使用 `requirements.txt`，模型权重、Conda环境或checkpoint无需进入Git仓库。
 
 ## 环境
 

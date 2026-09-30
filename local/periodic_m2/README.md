@@ -3,7 +3,7 @@
 当前训练与测试以仓库根目录 [README](../../README.md) 为准，统一配置为 `configs/rlopsd.yaml`。
 
 - 启动：`python scripts/train.py --help`、`python scripts/evaluate.py --help`。
-- 顺序独立训练：`python scripts/train_tasks.py --root <输出目录> --tasks chemistry biology ...`。
+- 顺序独立训练：`python scripts/train_tasks.py --root <输出目录>`，默认依次化学、生物、物理、材料，每科独立初始化。
 - `launch.py`/`run_tasks.py` 为上述入口共享实现，不硬编码本机模型、数据、GPU、环境路径。
 - `check_mechanism.py`：小模型6轮冻结/同步与奇数步保存恢复检查。
 - `check_8b_long_memory.py --model-path <模型目录>`：独立长序列GPU显存诊断，不能替代完整分布式训练验证。
