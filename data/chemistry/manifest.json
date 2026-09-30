@@ -1,0 +1,42 @@
+{
+  "paper": "https://arxiv.org/abs/2606.03532",
+  "source_directory": "/data1/wcy/opsd/rl/chemistry",
+  "source_manifest": {
+    "source": "/data1/wcy/opsd/rl/SciKnowEval/data/v2/sciknoweval_test_v2.jsonl",
+    "source_sha256": "93dcf1f58acd527fe5b8b5c1697d18c73c2dff70e10dafae3edbea84bac08678",
+    "seed": 42,
+    "train": 1890,
+    "test": 210,
+    "paper_counts": [
+      1890,
+      210
+    ],
+    "exact_author_split_unavailable": true,
+    "deduplication": "whitespace-normalized question and options"
+  },
+  "source_sha256": {
+    "train.jsonl": "767334931dd11021769d1ee333858f77c7a2848003b48a74f9d04f9452fdc578",
+    "test.jsonl": "2cd0304391817a067dcbe6b498def8b0ffb660d4d91220fdcd78ffd63bcbd922"
+  },
+  "converter_sha256": "80bb569e9da9ce168336ee50bc65c153ffb9af423904bce7d109abd9d5c0c0aa",
+  "artifacts": {
+    "train_teacher.parquet": {
+      "rows": 1890,
+      "sha256": "9e206a1ca4ac6c624e1fd5ee463f68f4567723b3d7d15311c91fa30f0f17f528",
+      "teacher_context": true
+    },
+    "train_plain.parquet": {
+      "rows": 1890,
+      "sha256": "fbe520781844756f6f9fae9a886d03422e92e1be5e3e8c1d3f9681c32b189bd0",
+      "teacher_context": false
+    },
+    "test.parquet": {
+      "rows": 210,
+      "sha256": "9686877f81a4e483e3e19d754a5c09f93cadb3665f64d1109ddfa169bf1fc04e",
+      "teacher_context": false
+    }
+  },
+  "split_policy": "Preserve existing seed42 split and row order; author IDs unverified.",
+  "test_history": "210-question test has been used in prior project evaluations; not untouched confirmation data.",
+  "teacher_context_policy": "Training teacher only; no answer hint in actor or test prompts."
+}

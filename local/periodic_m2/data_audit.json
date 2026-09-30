@@ -1,0 +1,18 @@
+{
+  "chemistry": {
+    "train": 1890,
+    "test": 210,
+    "teacher_prompt_max_tokens": 975,
+    "over_2048": 0,
+    "overlap": 0,
+    "test_privileged_context": false
+  },
+  "biology": {
+    "train": 450,
+    "test": 50,
+    "teacher_prompt_max_tokens": 465,
+    "over_2048": 0,
+    "overlap": 0,
+    "test_privileged_context": false
+  }
+}

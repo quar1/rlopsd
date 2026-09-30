@@ -1,0 +1,76 @@
+# Portable defaults for the current LoRA RL+OPSD M=2 baseline.
+# Paths are resolved relative to the shell's current directory; use explicit paths on servers.
+model_path: Qwen/Qwen3-8B-Base
+output_root: runs
+# null uses the bundled <repository>/data directory.
+data_root: null
+gpus: '0,1,2,3'
+steps: 300
+beta: 0.01
+teacher_update_interval: 2  # This entry point intentionally implements the M=2 baseline only.
+seed: 42
+train_batch_size: 16
+val_batch_size: 16
+rollout_n: 4
+ppo_mini_batch_size: 4
+micro_batch_size: 1
+ppo_epochs: 1
+max_prompt_length: 2048
+max_response_length: 8192
+thinking: true
+lora_rank: 64
+lora_alpha: 128
+target_modules: all-linear
+learning_rate: 0.00001
+warmup_steps: 10
+weight_decay: 0.01
+grad_clip: 1.0
+clip_ratio_low: 0.2
+clip_ratio_high: 0.28
+clip_ratio_c: 10.0
+param_offload: true
+optimizer_offload: true
+gradient_checkpointing: true
+entropy_checkpointing: true
+temperature: 1.0
+top_p: 1.0
+top_k: -1
+tensor_parallel_size: 2  # Four GPUs form two independent TP2 rollout replicas.
+gpu_memory_utilization: 0.45
+max_num_batched_tokens: 4096
+max_num_seqs: 16
+agent_workers: 4
+reward_workers: 2
+data_workers: 2
+log_prob_micro_batch_size: 1
+test_freq: 10
+save_freq: 50
+task_overrides:
+  chemistry:
+    save_freq: 5
+  biology:
+    test_freq: 10
+    save_freq: 50
+  physics:
+    test_freq: 10
+    save_freq: 50
+  materials:
+    test_freq: 10
+    save_freq: 50
+max_checkpoints: 2
+val_before_train: true
+val_max_samples: -1
+total_epochs: 100
+# Evaluation defaults: one greedy answer per held-out question.
+eval_do_sample: false
+eval_temperature: 0.0
+eval_n: 1
+ray_cpus: 16
+ray_object_store_bytes: 2147483648
+# Short absolute path avoids Ray UNIX socket pathname limits.
+ray_temp_root: /tmp
+threads: 4
+offline: false
+cache_dir: null
+nccl_p2p_disable: true
+network_interface: lo

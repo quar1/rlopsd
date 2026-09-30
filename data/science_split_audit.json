@@ -1,0 +1,37 @@
+{
+  "chemistry": {
+    "path": "/data1/wcy/opsd/rlopsd/chemistry",
+    "train": 1890,
+    "test": 210,
+    "id_overlap": 0,
+    "normalized_question_overlap": 0,
+    "teacher_hint_policy": "PASS"
+  },
+  "biology": {
+    "path": "/data1/wcy/opsd/rlopsd/biology",
+    "train": 540,
+    "test": 60,
+    "id_overlap": 0,
+    "normalized_question_overlap": 0,
+    "original_mcq_membership_and_prompts": "PRESERVED",
+    "teacher_hint_policy": "PASS",
+    "true_false_reward_check": "PASS",
+    "original_mcq500_archive": "/data1/wcy/opsd/rl/biology_mcq500"
+  },
+  "physics": {
+    "path": "/data1/wcy/opsd/rlopsd/physics",
+    "train": 720,
+    "test": 80,
+    "id_overlap": 0,
+    "normalized_question_overlap": 0,
+    "teacher_hint_policy": "PASS"
+  },
+  "materials": {
+    "path": "/data1/wcy/opsd/rlopsd/materials",
+    "train": 839,
+    "test": 94,
+    "id_overlap": 0,
+    "normalized_question_overlap": 0,
+    "teacher_hint_policy": "PASS"
+  }
+}
