@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/lauyikfung/SDPG",
+  "download_method": "GitHub codeload archive; git HTTPS timed out",
+  "head_api_sha": "b34e7b78c748a18b58a4b73c4d2743db0c397c78",
+  "archive_url": "https://codeload.github.com/lauyikfung/SDPG/tar.gz/refs/heads/main",
+  "archive_sha256": "c722ced2a39e597ef933eed3cb99f7856ccf087d521c55726f46be81dc6701df",
+  "tree_verification": "all tracked blobs match pinned GitHub commit",
+  "verified_files": 1090,
+  "submodules_not_downloaded": []
+}

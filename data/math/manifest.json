@@ -1,0 +1,70 @@
+{
+  "source": "https://huggingface.co/datasets/siyanzhao/Openthoughts_math_30k_opsd",
+  "source_shards": [
+    "data/train-00000-of-00002.parquet",
+    "data/train-00001-of-00002.parquet"
+  ],
+  "raw_count": 29434,
+  "train_count": 28519,
+  "dev_count": 256,
+  "seed": 42,
+  "rejected_counts": {
+    "empty_problem_or_answer": 7,
+    "duplicate_conflicting_answers": 35,
+    "duplicate_prompt": 60,
+    "unparseable_gold": 557
+  },
+  "benchmark_sources": {
+    "aime24": "https://huggingface.co/datasets/HuggingFaceH4/aime_2024",
+    "aime25": "https://huggingface.co/datasets/yentinglin/aime_2025",
+    "hmmt25": "https://huggingface.co/datasets/MathArena/hmmt_feb_2025"
+  },
+  "benchmark_overlap_rule": "Normalized prompt exact or character-5-gram Jaccard>=0.8; semantic paraphrase contamination NOT excluded",
+  "gold_filter": "Nonempty and math_verify parseable, not independent verification of answer correctness",
+  "prompt_template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0].role == 'system' %}\n        {{- messages[0].content + '\\n\\n' }}\n    {%- endif %}\n    {{- \"# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0].role == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0].content + '<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- set ns = namespace(multi_step_tool=true, last_query_index=messages|length - 1) %}\n{%- for message in messages[::-1] %}\n    {%- set index = (messages|length - 1) - loop.index0 %}\n    {%- if ns.multi_step_tool and message.role == \"user\" and message.content is string and not(message.content.startswith('<tool_response>') and message.content.endswith('</tool_response>')) %}\n        {%- set ns.multi_step_tool = false %}\n        {%- set ns.last_query_index = index %}\n    {%- endif %}\n{%- endfor %}\n{%- for message in messages %}\n    {%- if message.content is string %}\n        {%- set content = message.content %}\n    {%- else %}\n        {%- set content = '' %}\n    {%- endif %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) %}\n        {{- '<|im_start|>' + message.role + '\\n' + content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {%- set reasoning_content = '' %}\n        {%- if message.reasoning_content is string %}\n            {%- set reasoning_content = message.reasoning_content %}\n        {%- else %}\n            {%- if '</think>' in content %}\n                {%- set reasoning_content = content.split('</think>')[0].rstrip('\\n').split('<think>')[-1].lstrip('\\n') %}\n                {%- set content = content.split('</think>')[-1].lstrip('\\n') %}\n            {%- endif %}\n        {%- endif %}\n        {%- if loop.index0 > ns.last_query_index %}\n            {%- if loop.last or (not loop.last and reasoning_content) %}\n                {{- '<|im_start|>' + message.role + '\\n<think>\\n' + reasoning_content.strip('\\n') + '\\n</think>\\n\\n' + content.lstrip('\\n') }}\n            {%- else %}\n                {{- '<|im_start|>' + message.role + '\\n' + content }}\n            {%- endif %}\n        {%- else %}\n            {{- '<|im_start|>' + message.role + '\\n' + content }}\n        {%- endif %}\n        {%- if message.tool_calls %}\n            {%- for tool_call in message.tool_calls %}\n                {%- if (loop.first and content) or (not loop.first) %}\n                    {{- '\\n' }}\n                {%- endif %}\n                {%- if tool_call.function %}\n                    {%- set tool_call = tool_call.function %}\n                {%- endif %}\n                {{- '<tool_call>\\n{\"name\": \"' }}\n                {{- tool_call.name }}\n                {{- '\", \"arguments\": ' }}\n                {%- if tool_call.arguments is string %}\n                    {{- tool_call.arguments }}\n                {%- else %}\n                    {{- tool_call.arguments | tojson }}\n                {%- endif %}\n                {{- '}\\n</tool_call>' }}\n            {%- endfor %}\n        {%- endif %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if loop.first or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n    {%- if enable_thinking is defined and enable_thinking is false %}\n        {{- '<think>\\n\\n</think>\\n\\n' }}\n    {%- endif %}\n{%- endif %}",
+  "teacher_context": "\n\nHere is a reference solution to this problem:\n=== Reference Solution Begin ===\n{solution}\n=== Reference Solution End ===\n\nAfter reading the reference solution above, make sure you truly understand the reasoning behind each step — do not copy or paraphrase it. Now, using your own words and independent reasoning, derive the same final answer to the problem above. Think step by step, explore different approaches, and don't be afraid to backtrack or reconsider if something doesn't work out:\nPlease reason step by step, and put your final answer within \\boxed{{}}.",
+  "max_prompt_length": 4096,
+  "reference_reasoning_used": true,
+  "reference_reasoning_field": "solution",
+  "reused_split": "split_ids.json",
+  "train_order": "stored split order; loader must set shuffle=false for exact replay",
+  "source_fields": [
+    "problem",
+    "Answer",
+    "solution"
+  ],
+  "prompt_format": "native",
+  "thinking": false,
+  "tokenizer_model": "Qwen/Qwen3-4B",
+  "reused_prepared_data": "existing project split; all parquet bytes and split IDs unchanged",
+  "token_length_validation": {
+    "benchmarks/aime24.parquet": {
+      "count": 30,
+      "max_tokens": 427
+    },
+    "benchmarks/aime25.parquet": {
+      "count": 30,
+      "max_tokens": 802
+    },
+    "benchmarks/hmmt25.parquet": {
+      "count": 30,
+      "max_tokens": 659
+    },
+    "test.parquet": {
+      "count": 256,
+      "max_tokens": 1028
+    },
+    "train_plain.parquet": {
+      "count": 28519,
+      "max_tokens": 1776
+    },
+    "train_teacher.parquet": {
+      "count": 28519,
+      "max_tokens": 3328
+    }
+  },
+  "teacher_thinking": false,
+  "token_length_validation_note": "Full native-template retokenization with enable_thinking=false for student, teacher and evaluation; all prompts <=4096 tokens.",
+  "max_student_prompt_tokens": 1776,
+  "max_teacher_prompt_tokens": 3328
+}

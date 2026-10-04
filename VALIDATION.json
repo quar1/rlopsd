@@ -1,0 +1,53 @@
+{
+  "cpu_m2_mechanism": {
+    "status": "PASS",
+    "teacher_used_steps": [
+      0,
+      0,
+      2,
+      2,
+      4,
+      4
+    ],
+    "sync_steps": [
+      2,
+      4,
+      6
+    ],
+    "resume_checkpoint_step": 3,
+    "resume_last_sync": 2,
+    "negative_zero_kd_gradient": "PASS",
+    "padding_gradient_zero": "PASS",
+    "reference_disabled_alpha0": "PASS",
+    "independent_storage": "PASS"
+  },
+  "shell_syntax": "PASS",
+  "default_launcher_dry_run": "PASS",
+  "hydra_render": "PASS (final nonthinking M2)",
+  "teacher_update_interval": 2,
+  "rollout_n": 8,
+  "response_tokens": 4096,
+  "save_freq": 50,
+  "eval_export_freq": 20,
+  "dataset_parquet_sha256_match": "PASS (6 files)",
+  "gpu_training_launched_for_this_publication": false,
+  "default_total_gpu_count": 4,
+  "training_gpus": [
+    0,
+    1
+  ],
+  "evaluation_gpus": [
+    2,
+    3
+  ],
+  "four_gpu_launcher_dry_run": "PASS",
+  "four_gpu_hydra_render": "PASS",
+  "model_weights_included": false,
+  "student_thinking": false,
+  "teacher_thinking": false,
+  "evaluation_thinking": false,
+  "nonthinking_prompt_length_check": "PASS (all prepared rows)",
+  "nonthinking_launcher_dry_run": "PASS",
+  "standalone_eval_no_thinking": "PASS",
+  "model_lfs_pointers_included": false
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "file": "data/math/benchmarks/aime24.parquet",
+    "sha256": "e82dda8ec08986e595956a70c3d619d3e50c334b0d6e8dfea6569bdc5e3bacd5",
+    "bytes": 20844
+  },
+  {
+    "file": "data/math/benchmarks/aime25.parquet",
+    "sha256": "74693fd17a8351fc61a179baaec7269d39fba142f3a0ad7097e5695aa8a3ffe1",
+    "bytes": 22300
+  },
+  {
+    "file": "data/math/benchmarks/hmmt25.parquet",
+    "sha256": "9d6bacbbc64697f2699c08a8b0cbb4589b040f57372c9c2851338bb619006837",
+    "bytes": 17316
+  },
+  {
+    "file": "data/math/test.parquet",
+    "sha256": "37876c1a7c8dbc24a3b3e31eb5bc0cc4ce35a852e8cdfcbed5da1bdd6f9f5ada",
+    "bytes": 99976
+  },
+  {
+    "file": "data/math/train_plain.parquet",
+    "sha256": "cd10adcb25dc30776b5007184e770133ba603210e270fc2eaabbcd471e9d7875",
+    "bytes": 8392375
+  },
+  {
+    "file": "data/math/train_teacher.parquet",
+    "sha256": "fa2f5cfb25b1a5a2cdaa05f0c2e9ead0de0ff1cea2f2cad5ac131f20f5236d7c",
+    "bytes": 31400459
+  }
+]

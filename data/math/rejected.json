@@ -1,0 +1,2698 @@
+[
+  {
+    "id": "openthoughts-03974",
+    "reason": "empty_problem_or_answer"
+  },
+  {
+    "id": "openthoughts-04807",
+    "reason": "empty_problem_or_answer"
+  },
+  {
+    "id": "openthoughts-06651",
+    "reason": "empty_problem_or_answer"
+  },
+  {
+    "id": "openthoughts-07700",
+    "reason": "empty_problem_or_answer"
+  },
+  {
+    "id": "openthoughts-10294",
+    "reason": "empty_problem_or_answer"
+  },
+  {
+    "id": "openthoughts-13556",
+    "reason": "empty_problem_or_answer"
+  },
+  {
+    "id": "openthoughts-13890",
+    "reason": "empty_problem_or_answer"
+  },
+  {
+    "id": "openthoughts-00050",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-06856",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-29152",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-00603"
+  },
+  {
+    "id": "openthoughts-02076",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-00768"
+  },
+  {
+    "id": "openthoughts-28935",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-00815"
+  },
+  {
+    "id": "openthoughts-10986",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-00893"
+  },
+  {
+    "id": "openthoughts-23618",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-01385"
+  },
+  {
+    "id": "openthoughts-28594",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-01407"
+  },
+  {
+    "id": "openthoughts-01545",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-27670",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-28945",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-01794"
+  },
+  {
+    "id": "openthoughts-18774",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-01872"
+  },
+  {
+    "id": "openthoughts-28281",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-02360"
+  },
+  {
+    "id": "openthoughts-02384",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-18006",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-18930",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-02591"
+  },
+  {
+    "id": "openthoughts-17888",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-02620"
+  },
+  {
+    "id": "openthoughts-03044",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-02821"
+  },
+  {
+    "id": "openthoughts-24077",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-03139"
+  },
+  {
+    "id": "openthoughts-07044",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-03189"
+  },
+  {
+    "id": "openthoughts-27597",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-03204"
+  },
+  {
+    "id": "openthoughts-28588",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-03414"
+  },
+  {
+    "id": "openthoughts-27766",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-03417"
+  },
+  {
+    "id": "openthoughts-21441",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-03503"
+  },
+  {
+    "id": "openthoughts-29396",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-03523"
+  },
+  {
+    "id": "openthoughts-04291",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-03905"
+  },
+  {
+    "id": "openthoughts-22729",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-03939"
+  },
+  {
+    "id": "openthoughts-28777",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-03961"
+  },
+  {
+    "id": "openthoughts-04427",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-11359",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-15704",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-04474",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-19944",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-08631",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-04785"
+  },
+  {
+    "id": "openthoughts-28019",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-05291"
+  },
+  {
+    "id": "openthoughts-05925",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-15975",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-06194",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-28045",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-06391",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-29282",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-13925",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-06946"
+  },
+  {
+    "id": "openthoughts-09238",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-07261"
+  },
+  {
+    "id": "openthoughts-29254",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-07397"
+  },
+  {
+    "id": "openthoughts-28347",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-08176"
+  },
+  {
+    "id": "openthoughts-08300",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-11778",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-08662",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-28123",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-18266",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-08914"
+  },
+  {
+    "id": "openthoughts-25763",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-09700"
+  },
+  {
+    "id": "openthoughts-24774",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-10035"
+  },
+  {
+    "id": "openthoughts-27681",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-11014"
+  },
+  {
+    "id": "openthoughts-12714",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-11099"
+  },
+  {
+    "id": "openthoughts-26427",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-11360"
+  },
+  {
+    "id": "openthoughts-28652",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-12097"
+  },
+  {
+    "id": "openthoughts-19112",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-12230"
+  },
+  {
+    "id": "openthoughts-13704",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-12406"
+  },
+  {
+    "id": "openthoughts-12507",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-26417",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-18202",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-12973"
+  },
+  {
+    "id": "openthoughts-25162",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-13044"
+  },
+  {
+    "id": "openthoughts-13616",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-13531"
+  },
+  {
+    "id": "openthoughts-16138",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-14058"
+  },
+  {
+    "id": "openthoughts-20870",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-15505"
+  },
+  {
+    "id": "openthoughts-15536",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-17450",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-28747",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-15739"
+  },
+  {
+    "id": "openthoughts-16325",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-28237",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-21076",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-16999"
+  },
+  {
+    "id": "openthoughts-17682",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-25708",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-27258",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-17946"
+  },
+  {
+    "id": "openthoughts-20767",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-18395"
+  },
+  {
+    "id": "openthoughts-18783",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-27855",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-27653",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-20089"
+  },
+  {
+    "id": "openthoughts-20163",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-29234",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-21796",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-20432"
+  },
+  {
+    "id": "openthoughts-28733",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-21060"
+  },
+  {
+    "id": "openthoughts-28052",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-21454"
+  },
+  {
+    "id": "openthoughts-27585",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-21572"
+  },
+  {
+    "id": "openthoughts-27558",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-22185"
+  },
+  {
+    "id": "openthoughts-29268",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-22615"
+  },
+  {
+    "id": "openthoughts-24529",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-26497",
+    "reason": "duplicate_conflicting_answers"
+  },
+  {
+    "id": "openthoughts-28972",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-24922"
+  },
+  {
+    "id": "openthoughts-25965",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-25613"
+  },
+  {
+    "id": "openthoughts-27389",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-26128"
+  },
+  {
+    "id": "openthoughts-27978",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-26259"
+  },
+  {
+    "id": "openthoughts-28006",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-26378"
+  },
+  {
+    "id": "openthoughts-28002",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-26385"
+  },
+  {
+    "id": "openthoughts-27524",
+    "reason": "duplicate_prompt",
+    "kept": "openthoughts-26520"
+  },
+  {
+    "id": "openthoughts-00125",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-00170",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-00194",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-00217",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-00228",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-00296",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-00325",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-00398",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-00410",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-00424",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-00443",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-00503",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-00531",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-00539",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-00546",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-00554",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-00681",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-00766",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-00770",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-00774",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-00899",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-00923",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-01022",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-01139",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-01228",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-01237",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-01298",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-01306",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-01336",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-01347",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-01377",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-01433",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-01443",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-01444",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-01463",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-01511",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-01685",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-01730",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-01758",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-01785",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-01795",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-01865",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-01903",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-01932",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-01959",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-02052",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-02057",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-02058",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-02166",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-02173",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-02232",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-02252",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-02278",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-02285",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-02296",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-02297",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-02392",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-02397",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-02424",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-02430",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-02461",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-02472",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-02534",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-02537",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-02543",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-02637",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-02646",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-02701",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-02705",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-02719",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-02763",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-02824",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03005",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03009",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03023",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03031",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03037",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03053",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03108",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03154",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03262",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03290",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03338",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03374",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03386",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03467",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03488",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03513",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03546",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03591",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03592",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03664",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03671",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03681",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03695",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03714",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03783",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03790",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03798",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03858",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03894",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03913",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-03986",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-04028",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-04030",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-04076",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-04082",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-04093",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-04105",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-04117",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-04127",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-04180",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-04195",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-04201",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-04337",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-04345",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-04368",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-04397",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-04412",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-04454",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-04597",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-04602",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-04634",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-04751",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-04755",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-04765",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-04841",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-04884",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-04888",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-04998",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-05014",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-05046",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-05180",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-05197",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-05223",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-05301",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-05307",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-05314",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-05322",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-05344",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-05357",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-05378",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-05413",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-05482",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-05509",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-05548",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-05550",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-05639",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-05672",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-05688",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-05712",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-05724",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-05748",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-05766",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-05841",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-05905",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-05959",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-05970",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-06002",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-06034",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-06126",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-06199",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-06229",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-06230",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-06260",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-06438",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-06463",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-06469",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-06623",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-06738",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-06774",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-06820",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-06899",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-06955",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-06968",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-06999",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-07040",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-07074",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-07083",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-07220",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-07259",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-07316",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-07318",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-07344",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-07368",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-07374",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-07468",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-07480",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-07502",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-07564",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-07566",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-07622",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-07633",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-07708",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-07749",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-07769",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-07798",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-07848",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-07870",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-07920",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-07953",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-07959",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-07973",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-07994",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-08009",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-08025",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-08039",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-08074",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-08143",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-08242",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-08289",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-08305",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-08333",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-08355",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-08382",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-08453",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-08515",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-08686",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-08848",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-08858",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-09030",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-09039",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-09077",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-09128",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-09146",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-09154",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-09157",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-09209",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-09244",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-09273",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-09316",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-09357",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-09472",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-09502",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-09516",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-09562",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-09571",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-09594",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-09620",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-09622",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-09675",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-09677",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-09697",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-09774",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-09819",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-09887",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-09933",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-10005",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-10155",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-10205",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-10302",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-10308",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-10318",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-10327",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-10349",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-10360",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-10361",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-10462",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-10498",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-10503",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-10563",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-10586",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-10605",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-10628",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-10702",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-10771",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-10862",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-10902",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-10924",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-10967",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-10985",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-11003",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-11114",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-11124",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-11136",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-11221",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-11253",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-11255",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-11259",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-11263",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-11355",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-11365",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-11395",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-11436",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-11457",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-11471",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-11529",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-11626",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-11657",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-11672",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-11681",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-11731",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-11795",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-11823",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-11859",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-11874",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-11880",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-11949",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-11950",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-12003",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-12005",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-12056",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-12058",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-12119",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-12188",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-12248",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-12295",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-12317",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-12332",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-12365",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-12424",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-12457",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-12475",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-12587",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-12603",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-12622",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-12703",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-12727",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-12738",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-12772",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-12846",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-12900",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-12921",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-12932",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-12994",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-13065",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-13137",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-13141",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-13155",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-13168",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-13193",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-13199",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-13332",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-13392",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-13442",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-13474",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-13480",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-13501",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-13535",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-13580",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-13613",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-13807",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-13839",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-13847",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-13858",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-13931",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-13972",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-14081",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-14107",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-14118",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-14174",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-14204",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-14283",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-14347",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-14476",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-14484",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-14548",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-14572",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-14613",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-14656",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-14755",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-14816",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-14929",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-14966",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-15024",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-15060",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-15121",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-15165",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-15351",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-15416",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-15540",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-15570",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-15577",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-15581",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-15584",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-15586",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-15599",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-15606",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-15631",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-15645",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-15656",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-15684",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-15705",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-15728",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-15796",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-15867",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-15905",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-15926",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-15940",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-16050",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-16051",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-16077",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-16101",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-16104",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-16136",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-16159",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-16194",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-16196",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-16216",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-16270",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-16431",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-16467",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-16468",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-16523",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-16615",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-16642",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-16682",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-16798",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-16803",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-16833",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-16843",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-16868",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-16995",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-17014",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-17029",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-17033",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-17062",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-17078",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-17148",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-17211",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-17254",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-17286",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-17356",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-17370",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-17394",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-17427",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-17438",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-17453",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-17531",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-17611",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-17627",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-17657",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-17721",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-17787",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-17800",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-17855",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-17871",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-17882",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-17945",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-17997",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-18069",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-18091",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-18107",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-18167",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-18292",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-18309",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-18316",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-18405",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-18528",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-18657",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-18663",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-18699",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-18719",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-18739",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-18747",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-18764",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-18769",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-18913",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-18937",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19007",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19052",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19056",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19093",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19132",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19171",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19196",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19233",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19274",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19372",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19434",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19456",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19494",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19505",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19517",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19528",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19558",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19578",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19579",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19605",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19627",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19636",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19642",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19657",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19704",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19747",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19890",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19892",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19895",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19915",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19938",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19966",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-19993",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-20070",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-20123",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-20149",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-20189",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-20211",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-20230",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-20344",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-20413",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-20495",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-20502",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-20530",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-20563",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-20575",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-20603",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-20645",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-20665",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-20670",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-20706",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-20761",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-20806",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-20815",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-20819",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-20823",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-20882",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-20953",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-20977",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-21012",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-21067",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-21084",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-21111",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-21148",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-21188",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-21250",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-21264",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-23078",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-23851",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-26899",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-27153",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-27264",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-27337",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-27382",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-27436",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-27589",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-27677",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-27690",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-27768",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-27905",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-28009",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-28093",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-28095",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-28226",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-28295",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-28354",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-28363",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-28432",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-28501",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-28598",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-28779",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-28786",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-28902",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-28920",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-29010",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-29079",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-29094",
+    "reason": "unparseable_gold"
+  },
+  {
+    "id": "openthoughts-29351",
+    "reason": "unparseable_gold"
+  }
+]
