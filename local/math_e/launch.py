@@ -88,9 +88,9 @@ def main():
     if (split['seed']!=method['probe_seed'] or split['probe_questions']!=min(method['probe_pool_questions'],split['train_questions']//4)
             or split['source']!=str((Path(settings['data_root'])/'math').resolve())):
         p.error('Prepared data differs from request; choose a new --prepared-dir')
-    # scripts/train.py now selects math_e; call the original config renderer privately.
-    cmd=[sys.executable,'-m','local.periodic_m2.launch','--config',str(a.config.resolve()),'--task','math',
-         '--gpus',a.gpus,'--steps',str(a.steps),'--run-dir',str(run),'--render-only']
+    # Render the shared FSDP configuration before adding the math_e worker settings.
+    cmd=[sys.executable,'-m','local.math_e.render_config','--config',str(a.config.resolve()),'--task','math',
+         '--gpus',a.gpus,'--steps',str(a.steps),'--run-dir',str(run)]
     for item in overrides:cmd+=['--set',item]
     if a.resume:cmd+=['--resume',str(a.resume.resolve())]
     run.mkdir(parents=True,exist_ok=True)

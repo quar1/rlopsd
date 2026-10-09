@@ -1,4 +1,4 @@
-"""Portable RL+OPSD launcher: native self-teacher or independent M=2 teacher."""
+"""Render the shared FSDP configuration for math_e without launching training."""
 import argparse
 import datetime
 import hashlib
@@ -16,20 +16,18 @@ ROOT = Path(__file__).resolve().parents[2]
 TASKS = ('math',)
 
 
-def parse_args(mode, argv=None):
-    p = argparse.ArgumentParser(description=f'{mode}: LoRA RL+OPSD; teacher interval 0=native self-teacher, 2=periodic teacher')
+def parse_args(argv=None):
+    p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--config', type=Path, default=ROOT / 'configs/rlopsd.yaml')
     p.add_argument('--task', choices=TASKS, required=True)
-    p.add_argument('--run-dir', type=Path, help='Default: output_root/<task>-<mode>-<timestamp>')
+    p.add_argument('--run-dir', type=Path, help='Default: output_root/<task>-config-<timestamp>')
     p.add_argument('--model-path')
     p.add_argument('--data-root', type=Path)
     p.add_argument('--gpus', help='Physical indices in PCI bus order, e.g. 4,5')
     for flag, kind in [('beta', float), ('steps', int), ('test-freq', int), ('save-freq', int)]:
         p.add_argument('--'+flag, type=kind)
     p.add_argument('--set', action='append', default=[], metavar='KEY=VALUE', help='Override any key in configs/rlopsd.yaml; repeatable')
-    p.add_argument('--resume' if mode == 'train' else '--checkpoint', dest='resume', type=Path,
-                   help='Complete checkpoints/global_step_N directory; evaluation without it evaluates initial model')
-    p.add_argument('--render-only', action='store_true', help='Validate and save full configuration without launching GPU workers')
+    p.add_argument('--resume', type=Path, help='Complete math_e checkpoints/global_step_N directory')
     return p, p.parse_args(argv)
 
 
@@ -68,7 +66,7 @@ def load_config(p, a):
                 'agent_workers','reward_workers','max_num_batched_tokens','max_num_seqs','ray_cpus','threads',
                 'total_epochs','log_prob_micro_batch_size','eval_n','max_checkpoints'):
         if c[key] <= 0:p.error(f'{key} must be positive')
-    if c['teacher_update_interval'] not in (-1, 0, 2):p.error('teacher_update_interval must be -1 (frozen initial), 0 (current student), or 2 (periodic teacher)')
+    if c['teacher_update_interval'] != -1:p.error('math_e requires teacher_update_interval=-1 to initialize its independent teacher')
     if c['lr_scheduler_step_unit'] not in ('outer', 'optimizer'):p.error('Unknown scheduler step unit')
     if c['teacher_thinking'] is not None and not isinstance(c['teacher_thinking'], bool):
         p.error('teacher_thinking must be null or a boolean')
@@ -94,8 +92,8 @@ def data_fingerprint(data):
             for name in ('train_teacher.parquet','train_plain.parquet','test.parquet')}
 
 
-def main(mode='train', argv=None):
-    p, a = parse_args(mode, argv)
+def main(argv=None):
+    p, a = parse_args(argv)
     c, gpus = load_config(p, a)
     root = ROOT
     model = c['model_path']
@@ -113,7 +111,7 @@ def main(mode='train', argv=None):
             p.error('Checkpoint dataset differs from requested data; do not resume with a changed split')
     if a.run_dir is None:
         stamp = datetime.datetime.now().strftime('%Y%m%d-%H%M%S-%f')
-        a.run_dir = Path(c['output_root']) / f'{a.task}-{mode}-{stamp}'
+        a.run_dir = Path(c['output_root']) / f'{a.task}-config-{stamp}'
     a.run_dir = a.run_dir.expanduser().resolve()
     if (a.run_dir/'status.json').exists():p.error('Use a fresh run-dir to preserve previous run records (also for --resume)')
     a.run_dir.mkdir(parents=True, exist_ok=True)
@@ -175,15 +173,15 @@ def main(mode='train', argv=None):
      'actor_rollout_ref.rollout.val_kwargs.do_sample':c['eval_do_sample'],
      'actor_rollout_ref.rollout.val_kwargs.temperature':c['eval_temperature'],
      'actor_rollout_ref.rollout.val_kwargs.n':c['eval_n'],
-     'reward.custom_reward_function.path':str(root/'local/math_m2/common.py'),
+     'reward.custom_reward_function.path':str(root/'local/math_e/common.py'),
      'reward.custom_reward_function.name':'compute_score',
      'reward.reward_manager.name':'naive','reward.num_workers':c['reward_workers'],
      'trainer.use_legacy_worker_impl':'enable',
      'trainer.n_gpus_per_node':len(gpus),'trainer.nnodes':1,'trainer.total_epochs':c['total_epochs'],
      'trainer.total_training_steps':c['steps'],
-     'trainer.val_only':mode=='evaluate',
-     'trainer.val_before_train':mode=='evaluate' or (c['val_before_train'] and not bool(a.resume)),'trainer.test_freq':c['test_freq'],
-     'trainer.save_freq':-1 if mode=='evaluate' else c['save_freq'],
+     'trainer.val_only':False,
+     'trainer.val_before_train':c['val_before_train'] and not bool(a.resume),'trainer.test_freq':c['test_freq'],
+     'trainer.save_freq':c['save_freq'],
      'trainer.max_actor_ckpt_to_keep':c['max_checkpoints'],
      'trainer.default_local_dir':str(a.run_dir/'checkpoints'),
      'trainer.validation_data_dir':str(a.run_dir/'evaluation'),
@@ -204,10 +202,10 @@ def main(mode='train', argv=None):
     if c['teacher_thinking'] is not None:
         opts['+data.teacher_apply_chat_template_kwargs.enable_thinking'] = c['teacher_thinking']
     if a.task == 'math':
-        from local.math_m2.common import PLAIN_TEMPLATE, TEACHER_CONTEXT
+        from local.math_e.common import TEACHER_CONTEXT
         manifest = json.loads((data/'manifest.json').read_text())
         from transformers import AutoTokenizer
-        from local.math_m2.common import template_kwargs
+        from local.math_e.common import template_kwargs
         tokenizer = AutoTokenizer.from_pretrained(model, local_files_only=c['offline'])
         prompt_kwargs = template_kwargs(tokenizer, c['math_prompt_format'], c['thinking'])
         if (manifest['prompt_template'] != prompt_kwargs['chat_template']
@@ -229,7 +227,7 @@ def main(mode='train', argv=None):
             'actor_rollout_ref.model.custom_chat_template': prompt_kwargs['chat_template'],
             'data.truncation': 'error', 'data.shuffle': False,
             'trainer.balance_batch': False,
-            'reward.custom_reward_function.path': str(root/'local/math_m2/common.py'),
+            'reward.custom_reward_function.path': str(root/'local/math_e/common.py'),
         })
     if a.resume:opts['trainer.resume_from_path'] = str(a.resume)
     def val(x):
@@ -253,15 +251,15 @@ def main(mode='train', argv=None):
         for key, sub in [('HF_HOME','huggingface'),('TRITON_CACHE_DIR','triton'),('TORCHINDUCTOR_CACHE_DIR','inductor')]:
             env[key] = str(Path(c['cache_dir'])/sub)
     record = {'command':shlex.join(cmd), 'cwd':str(root), 'gpu_indices':[int(s) for s in gpus],
-              'teacher_mode':{-1:'independent_frozen_initial',0:'native_current_student',2:'independent_periodic_m2'}[c['teacher_update_interval']],
-              'model':model, 'mode':mode, 'settings':c, 'options':opts,
+              'teacher_mode':'independent_teacher_for_math_e',
+              'model':model, 'mode':'train', 'settings':c, 'options':opts,
               'teacher_context_template':manifest['teacher_context'] if a.task == 'math' else '\n\nThe correct answer to this problem is: {answer}\nUse this to verify your reasoning, but show your full solution process.',
               'data_directory':str(data), 'data_fingerprint':fingerprint,
               'evaluation':'asynchronous AIME24/AIME25/HMMT25, n=12, temperature=1, every20; internal validation disabled',
-              'memory_execution':{'teacher_cpu_offload':'not_applicable_shared_current_student' if c['teacher_update_interval']==0 else ('after teacher forward, before log_softmax' if c['teacher_cpu_offload'] else 'disabled_resident'), 'free_cache_engine':c['free_cache_engine'], 'full_vocabulary_kl_token_chunk':256, 'entropy_token_chunk':256},
+              'memory_execution':{'teacher_cpu_offload':'after teacher forward, before log_softmax' if c['teacher_cpu_offload'] else 'disabled_resident', 'free_cache_engine':c['free_cache_engine'], 'full_vocabulary_kl_token_chunk':256, 'entropy_token_chunk':256},
               'environment':{key:env[key] for key in ('CUDA_DEVICE_ORDER','CUDA_VISIBLE_DEVICES','HF_HUB_OFFLINE','OMP_NUM_THREADS','NCCL_P2P_DISABLE','NCCL_SOCKET_IFNAME')}}
     if a.task == 'math':
-        from local.math_m2.official_scoring import TRAIN_RULE, EVAL_RULE
+        from local.math_e.official_scoring import TRAIN_RULE, EVAL_RULE
         record['reward_scoring_rule'] = TRAIN_RULE
         record['external_evaluation_scoring_rule'] = EVAL_RULE
         record['reward_execution'] = 'math_verify default timeouts in spawned CPU main thread'
@@ -280,16 +278,7 @@ def main(mode='train', argv=None):
     config_text = result.stdout[start:] if start>=0 else result.stdout
     yaml.safe_load(config_text)
     (a.run_dir/'resolved_config.yaml').write_text(config_text)
-    if a.render_only:return 0
-    def status(**values):
-        (a.run_dir/'status.json').write_text(json.dumps({**values,'time':datetime.datetime.now().isoformat()},indent=2)+'\n')
-    status(status='starting',pid=os.getpid(),mode=mode)
-    with (a.run_dir/'train.log' if mode=='train' else a.run_dir/'evaluate.log').open('w') as log:
-        proc = subprocess.Popen(cmd,cwd=root,env=env,stdout=log,stderr=subprocess.STDOUT)
-        status(status='process_running',pid=os.getpid(),trainer_pid=proc.pid,mode=mode)
-        code = proc.wait()
-    status(status='finished' if code==0 else 'failed',returncode=code,mode=mode)
-    return code
+    return 0
 
 
 if __name__ == '__main__':

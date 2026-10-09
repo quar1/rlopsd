@@ -354,7 +354,7 @@ class Controller:
                        all_wrong_fraction=stats[2]/stats[0],all_correct_fraction=stats[3]/stats[0],
                        mixed_fraction=stats[1]/stats[0])
         lengths=[];repeats=[];boxed=[]
-        from local.math_m2.common import last_boxed
+        from local.math_e.common import last_boxed
         for ids,mask in zip(data.batch['responses'],data.batch['response_mask']):
             tokens=ids[mask.bool()].cpu().tolist();lengths.append(len(tokens))
             grams=[tuple(tokens[i:i+3]) for i in range(max(0,len(tokens)-2))]

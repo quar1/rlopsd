@@ -106,7 +106,7 @@ if root.exists():
     raise SystemExit(f'RUN_DIR already exists; choose a fresh directory: {root}')
 settings['output_root'] = str(parent)
 snapshot = root/'source'
-command = [sys.executable, '-m', 'local.math_m2.run_async', '--run-dir', str(root),
+command = [sys.executable, '-m', 'local.math_e.run_async', '--run-dir', str(root),
     '--config', 'configs/shell_launch.yaml',
     '--eval-gpus', ','.join(eval_gpus),
     '--eval-memory-utilization', env.get('EVAL_MEMORY_UTILIZATION', '0.8'),

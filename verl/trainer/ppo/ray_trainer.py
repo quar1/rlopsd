@@ -426,7 +426,7 @@ class RayPPOTrainer:
         with marked_timer("dump_rollout_generations", timing_raw, color="green"):
             group_limit = self.config.trainer.get('rollout_log_num_groups', 0)
             if group_limit:
-                from local.math_m2.step_logging import save_rollout_groups
+                from local.math_e.step_logging import save_rollout_groups
                 save_rollout_groups(batch, self.tokenizer, reward_extra_infos_dict, rollout_data_dir,
                     self.global_steps, group_limit, self.config.data.max_response_length)
                 return
@@ -1795,7 +1795,7 @@ class RayPPOTrainer:
                 # collect metrics
                 metrics.update(compute_data_metrics(batch=batch, use_critic=self.use_critic))
                 if self.config.actor_rollout_ref.actor.get("global_token_mean", False):
-                    from local.math_m2.common import reward_group_metrics
+                    from local.math_e.common import reward_group_metrics
                     metrics.update(reward_group_metrics(
                         batch.non_tensor_batch["uid"], batch.batch["token_level_scores"].sum(-1).detach().cpu().tolist()))
                     for key in ("no_box", "parse_failed", "verify_exception", "string_match_recovered"):
@@ -1817,7 +1817,7 @@ class RayPPOTrainer:
                 # TODO: make a canonical logger that supports various backend
                 logger.log(data=metrics, step=self.global_steps)
                 if self.config.trainer.get('loss_log_path'):
-                    from local.math_m2.step_logging import save_step_losses
+                    from local.math_e.step_logging import save_step_losses
                     save_step_losses(self.config.trainer.loss_log_path, self.global_steps, metrics)
 
                 progress_bar.update(1)

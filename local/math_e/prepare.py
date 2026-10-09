@@ -37,7 +37,7 @@ def prepare(source, output, tokenizer, pool_size=128, seed=20261009, max_length=
     table = pq.read_table(source / 'train_teacher.parquet')
     rows = table.to_pylist()
     ids = [r['extra_info']['id'] for r in rows]
-    from local.math_m2.common import normalize_problem
+    from local.math_e.common import normalize_problem
     keys = [normalize_problem(r['extra_info']['problem']) for r in rows]
     if len(set(ids)) != len(ids) or len(set(keys)) != len(keys):
         raise ValueError('Expected unique questions; never split duplicate questions across fit/probe')

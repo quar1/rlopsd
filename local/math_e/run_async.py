@@ -10,7 +10,7 @@ import subprocess
 import sys
 import time
 
-from local.math_m2.evaluate import save_json
+from local.math_e.evaluate import save_json
 
 
 def members(sid):
@@ -114,7 +114,7 @@ def main():
     data = str(Path(settings['data_root'])/'math')
     eval_every = settings.get('eval_export_freq', 0) or settings['save_freq']
     train_args = ['scripts/train.py','--task','math','--config',str(config_path)]
-    eval_args = ['-m','local.math_m2.evaluate','--model',model,'--data',data,
+    eval_args = ['-m','local.math_e.evaluate','--model',model,'--data',data,
                  '--prompt-format',settings.get('math_prompt_format','plain'),
                  '--thinking' if settings['thinking'] else '--no-thinking',
                  '--gpu-memory-utilization',str(a.eval_memory_utilization),'--max-num-seqs',str(a.eval_max_num_seqs),'--question-batch-size','4']

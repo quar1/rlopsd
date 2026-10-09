@@ -2,7 +2,7 @@
 
 基于 [SDPG](https://github.com/lauyikfung/SDPG) 和项目已有数学训练实现，使用后训练版本 **Qwen/Qwen3-4B**（不是 Base），训练集为 OpenThoughts 数学数据，测试为 AIME24、AIME25、HMMT February 2025。
 
-学生、教师和测试全部使用 `enable_thinking=false`。默认训练方案为 **Teacher-first 经验学习 + 虚拟学生反馈**：先更新教师，再更新学生；每 10 个外层 step 比较教师更新强度，决策发生在 step1、11、21……。训练入口已替换原 M2 方案，保留正式训练、断点恢复和正常异步评测。
+学生、教师和测试全部使用 `enable_thinking=false`。默认训练方案为 **Teacher-first 经验学习 + 虚拟学生反馈**：先更新教师，再更新学生；每 10 个外层 step 比较教师更新强度，决策发生在 step1、11、21……。训练、奖励和评测代码集中在 `local/math_e/`，保留正式训练、断点恢复和正常异步评测。
 
 ## 获取代码和数据
 
@@ -116,7 +116,7 @@ python scripts/train.py --task math --config configs/math_e_qwen3_4b.yaml \
   --resume /data/rlopsd-runs/RUN/train/checkpoints/global_step_50
 ```
 
-从仓库根目录执行恢复命令，并使用与原运行一致的训练和方法配置；该入口只恢复训练，若要异步评测，另外启动 watcher。完整 checkpoint 保存学生、教师、两者的优化器和 scheduler、RNG、数据位置、步计数、探针顺序/游标以及反馈窗口与强度。旧 M2 或冻结教师 checkpoint 不能直接作为 math_e checkpoint 恢复。
+从仓库根目录执行恢复命令，并使用与原运行一致的训练和方法配置；该入口只恢复训练，若要异步评测，另外启动 watcher。完整 checkpoint 保存学生、教师、两者的优化器和 scheduler、RNG、数据位置、步计数、探针顺序/游标以及反馈窗口与强度。仅支持 math_e 完整 checkpoint，不支持旧方案 checkpoint。
 
 只有两张可用卡时，可用 `python scripts/train.py --model-path /data/models/Qwen3-4B --gpus 0,3 --run-dir /data/rlopsd-runs/RUN/train` 单独启动主干训练，之后再安排正常评测。通用参数通过 `--set KEY=VALUE` 覆盖，方法参数通过 `--method-set KEY=VALUE` 覆盖。
 

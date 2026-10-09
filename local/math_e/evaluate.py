@@ -9,8 +9,8 @@ from contextlib import contextmanager
 
 import pyarrow.parquet as pq
 from transformers import AutoTokenizer
-from local.math_m2.common import template_kwargs, compute_eval_score
-from local.math_m2.official_scoring import EVAL_RULE, TRAIN_RULE
+from local.math_e.common import template_kwargs, compute_eval_score
+from local.math_e.official_scoring import EVAL_RULE, TRAIN_RULE
 
 
 def save_json(path, value):

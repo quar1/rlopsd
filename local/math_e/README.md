@@ -50,8 +50,10 @@ python scripts/train.py --model-path /data/models/Qwen3-4B --gpus 0,3 --run-dir 
 
 | 文件 | 职责 |
 |---|---|
-| `launch.py`、`entry.py`、`worker.py`、`config.py` | 配置、源码快照、训练器和 worker 接入 |
+| `launch.py`、`render_config.py`、`entry.py`、`worker.py`、`config.py` | 配置、源码快照、训练器和 worker 接入 |
 | `runtime.py` | 教师更新、虚拟反馈控制、真实学生更新与恢复 |
 | `mechanism.py` | 梯度几何、状态快照/回滚、候选选择和种子 |
 | `prepare.py` | 训练/探针划分和参考目标 tokenization |
 | `rollout.py`、`memory.py` | 生成请求种子及资源日志 |
+| `common.py`、`official_scoring.py`、`reward_worker.py` | 数学提示模板、奖励和正式判分 |
+| `run_async.py`、`evaluate.py`、`step_logging.py` | 训练/评测调度、独立评测和训练日志 |

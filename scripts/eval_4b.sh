@@ -12,4 +12,4 @@ args=(--model "${MODEL_PATH:-$PROJECT_ROOT/../models/Qwen3-4B}"
       --prompt-format native --no-thinking --n 12 --max-tokens 32000 --max-model-len 32768
       --gpu-memory-utilization "${EVAL_MEMORY_UTILIZATION:-0.8}"
       --max-num-seqs "${EVAL_MAX_NUM_SEQS:-8}")
-exec "$PYTHON" -m local.math_m2.evaluate "${args[@]}" "$@"
+exec "$PYTHON" -m local.math_e.evaluate "${args[@]}" "$@"

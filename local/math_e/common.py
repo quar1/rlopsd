@@ -4,7 +4,7 @@ import threading
 import unicodedata
 from functools import lru_cache
 from math_verify import LatexExtractionConfig, parse
-from local.math_m2.official_scoring import score_grpo_response, score_eval_response
+from local.math_e.official_scoring import score_grpo_response, score_eval_response
 
 _reward_pool = None
 _reward_pool_lock = threading.Lock()
@@ -70,7 +70,7 @@ def _score_with_main_thread(solution_str, ground_truth, mode):
     if threading.current_thread() is not threading.main_thread():
         from concurrent.futures import ProcessPoolExecutor
         import multiprocessing
-        from local.math_m2.reward_worker import score_in_process
+        from local.math_e.reward_worker import score_in_process
         global _reward_pool
         with _reward_pool_lock:
             if _reward_pool is None:
