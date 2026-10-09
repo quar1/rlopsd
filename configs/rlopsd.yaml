@@ -1,11 +1,11 @@
-# Qwen/Qwen3-4B, thinking off, independent teacher copied every 2 outer iterations.
+# Qwen/Qwen3-4B, thinking off; math_e Worker performs teacher-first updates.
 model_path: ../models/Qwen3-4B
 output_root: ../rlopsd-runs
 data_root: data
 gpus: 0,1
 steps: 200
 beta: 0.01
-teacher_update_interval: 2
+teacher_update_interval: -1  # Independent teacher bootstrap; math_e controls actual updates.
 teacher_cpu_offload: false
 free_cache_engine: false
 seed: 42

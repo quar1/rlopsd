@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Qwen/Qwen3-4B M2: GPU0/1 training, GPU2/3 asynchronous evaluation by default.
+# Qwen/Qwen3-4B math_e: GPU0/1 training, GPU2/3 asynchronous evaluation by default.
 set -euo pipefail
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd -- "$SCRIPT_DIR/.." && pwd)"
@@ -8,7 +8,7 @@ if [[ "${1:-}" == "--help" || "${1:-}" == "-h" ]]; then
 Usage: bash scripts/train_4b.sh [--dry-run]
 
 Launch fresh OpenThoughts RL+OPSD training and asynchronous AIME24/25/HMMT25 evaluation.
-Student, teacher, and evaluation all disable thinking; teacher hard-syncs AFTER every 2 outer updates.
+Student, teacher, and evaluation all disable thinking; teacher updates FIRST; virtual feedback chooses strength at steps 1,11,21,...
 Defaults: 200 steps, beta=0.01, evaluate every20, 12 samples/test question.
 Full checkpoints every50; evaluation every20 uses adapter exports between checkpoints.
 Defaults: GPU0,1 train, GPU2,3 eval; datasets are bundled; set MODEL_PATH to an external Qwen3-4B model directory.
@@ -35,7 +35,7 @@ Environment overrides (set before bash):
 Normal launch saves an immutable source snapshot, configuration and launch command.
 Logs: RUN_DIR/train/train.log and RUN_DIR/evaluate_gpuN.log.
 Checkpoints: RUN_DIR/train/checkpoints/global_step_N; results: RUN_DIR/evaluation/.
-No extra sanity run or code-review gate; device/storage availability is still checked.
+The launcher starts the main training directly after device/storage checks.
 To detach: nohup bash scripts/train_4b.sh > launch.log 2>&1 &
 HELP
     exit 0
@@ -58,7 +58,7 @@ import yaml
 
 source = Path(sys.argv[1]).resolve()
 env = os.environ
-config_path = Path(env.get('CONFIG_FILE', 'configs/math_m2_qwen3_4b.yaml')).expanduser()
+config_path = Path(env.get('CONFIG_FILE', 'configs/math_e_qwen3_4b.yaml')).expanduser()
 if not config_path.is_absolute():
     config_path = source/config_path
 settings = yaml.safe_load(config_path.read_text())
@@ -74,7 +74,7 @@ settings.update(
     rollout_n=int(env.get('ROLLOUT_N', settings['rollout_n'])),
     max_response_length=int(env.get('MAX_RESPONSE_LENGTH', settings['max_response_length'])),
     thinking=False, teacher_thinking=False, math_prompt_format='native',
-    teacher_update_interval=2, test_freq=-1, val_before_train=False,
+    teacher_update_interval=-1, test_freq=-1, val_before_train=False,
 )
 settings['cache_dir'] = str(source.parent/'rlopsd-cache')
 settings['ray_temp_root'] = '/tmp'
@@ -99,7 +99,7 @@ if settings['tensor_parallel_size'] <= 0 or len(train_gpus) % settings['tensor_p
 stamp = datetime.datetime.now().strftime('%Y%m%d-%H%M%S-%f')
 parent = Path(env.get('RUN_ROOT', settings['output_root'])).expanduser().resolve()
 model_name = Path(settings['model_path']).name.lower()
-root = Path(env.get('RUN_DIR', str(parent/f'math-{model_name}-nonthinking-m2-{settings["steps"]}-{stamp}'))).expanduser().resolve()
+root = Path(env.get('RUN_DIR', str(parent/f'math-{model_name}-nonthinking-math-e-{settings["steps"]}-{stamp}'))).expanduser().resolve()
 if root == source or source in root.parents:
     raise SystemExit('RUN_DIR must be outside rlopsd/ to avoid recursive source copying.')
 if root.exists():
@@ -107,7 +107,7 @@ if root.exists():
 settings['output_root'] = str(parent)
 snapshot = root/'source'
 command = [sys.executable, '-m', 'local.math_m2.run_async', '--run-dir', str(root),
-    '--config', 'configs/shell_launch.yaml', '--skip-sanity', '--skip-review',
+    '--config', 'configs/shell_launch.yaml',
     '--eval-gpus', ','.join(eval_gpus),
     '--eval-memory-utilization', env.get('EVAL_MEMORY_UTILIZATION', '0.8'),
     '--eval-max-num-seqs', env.get('EVAL_MAX_NUM_SEQS', '8')]

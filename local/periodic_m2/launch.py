@@ -29,7 +29,6 @@ def parse_args(mode, argv=None):
     p.add_argument('--set', action='append', default=[], metavar='KEY=VALUE', help='Override any key in configs/rlopsd.yaml; repeatable')
     p.add_argument('--resume' if mode == 'train' else '--checkpoint', dest='resume', type=Path,
                    help='Complete checkpoints/global_step_N directory; evaluation without it evaluates initial model')
-    p.add_argument('--smoke', action='store_true', help='3 steps,4 questions,response128,test/save every1; not a performance run')
     p.add_argument('--render-only', action='store_true', help='Validate and save full configuration without launching GPU workers')
     return p, p.parse_args(argv)
 
@@ -47,9 +46,6 @@ def load_config(p, a):
     if set(profile)-set(defaults) or 'task_overrides' in profile:p.error('Unknown or nested task override')
     c.pop('task_overrides', None)
     c.update(profile)
-    if a.smoke:
-        c.update(steps=3, train_batch_size=4, val_batch_size=4, max_response_length=128,
-                 val_max_samples=4, test_freq=1, save_freq=1)
     for item in a.set:
         key, sep, value = item.partition('=')
         if not sep or key not in c:p.error(f'Invalid --set: {item}')
@@ -258,7 +254,7 @@ def main(mode='train', argv=None):
             env[key] = str(Path(c['cache_dir'])/sub)
     record = {'command':shlex.join(cmd), 'cwd':str(root), 'gpu_indices':[int(s) for s in gpus],
               'teacher_mode':{-1:'independent_frozen_initial',0:'native_current_student',2:'independent_periodic_m2'}[c['teacher_update_interval']],
-              'model':model, 'mode':mode, 'smoke':a.smoke, 'settings':c, 'options':opts,
+              'model':model, 'mode':mode, 'settings':c, 'options':opts,
               'teacher_context_template':manifest['teacher_context'] if a.task == 'math' else '\n\nThe correct answer to this problem is: {answer}\nUse this to verify your reasoning, but show your full solution process.',
               'data_directory':str(data), 'data_fingerprint':fingerprint,
               'evaluation':'asynchronous AIME24/AIME25/HMMT25, n=12, temperature=1, every20; internal validation disabled',

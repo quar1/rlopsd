@@ -1,0 +1,22 @@
+method: teacher_first_experience_virtual_feedback
+method_version: math_e_v1
+feedback_interval_outer_steps: 10
+strength_candidates: [0.0, 0.25]
+initial_strength: 0.25
+ema_old_teacher_decay: 0.995
+teacher_preference_scale: 0.1
+gaussian_max_strength: 0.3
+gaussian_sigma: 0.5
+cosine_degeneracy_tolerance: 1.0e-8
+probe_pool_questions: 128
+probe_questions_per_decision: 8
+probe_seed: 20261009
+pair_seed: 42
+probe_loss: reference_ce
+feedback_se_multiplier: 1.0
+min_probe_gain: 0.0
+teacher_learning_rate: 5.0e-6
+teacher_warmup_steps: 0
+teacher_weight_decay: 0.0
+teacher_grad_clip: 1.0
+ce_chunk_tokens: 128

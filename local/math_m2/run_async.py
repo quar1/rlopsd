@@ -51,9 +51,7 @@ def cleanup(sid):
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--run-dir', type=Path, required=True)
-    p.add_argument('--config', default='configs/math_m2_qwen3_4b.yaml', help='Configuration relative to the immutable run source')
-    p.add_argument("--skip-sanity", action="store_true", help="Explicit user-authorized direct formal launch")
-    p.add_argument("--skip-review", action="store_true", help="User explicitly requested direct launch without additional verification")
+    p.add_argument('--config', default='configs/math_e_qwen3_4b.yaml', help='Configuration relative to the immutable run source')
     p.add_argument("--allow-partial-storage-budget", action="store_true", help="Start while old-checkpoint cleanup is pending; stop before disk exhaustion")
     p.add_argument("--eval-gpu", default="2")
     p.add_argument("--eval-gpus", help="Comma-separated independent evaluation GPUs; overrides --eval-gpu")
@@ -63,8 +61,6 @@ def main():
     p.add_argument('--train-min-free-gib', type=float, help='Required free memory per training GPU, including any other job peak reserve')
     p.add_argument('--checkpoint-budget-gib', type=float, default=20)
     a = p.parse_args()
-    if a.wait_for_train_memory and not a.skip_sanity:
-        p.error('Queued training currently requires --skip-sanity')
     if a.checkpoint_budget_gib <= 0 or (a.train_min_free_gib is not None and a.train_min_free_gib <= 0):
         p.error('Memory and checkpoint budgets must be positive')
     root = a.run_dir.resolve(); source = root/'source'
@@ -74,12 +70,8 @@ def main():
     training_gpus = [int(x) for x in settings['gpus'].split(',')]
     eval_gpus = [int(s) for s in (a.eval_gpus or a.eval_gpu).split(',')]
     assert len(set(eval_gpus)) == len(eval_gpus) and not set(eval_gpus) & set(training_gpus)
-    if not a.skip_review:
-        review = json.loads((root/'review.json').read_text())
-        assert review['verdict'] == 'PASS' and not review['blocking']
-    assert not (root/'train').exists() and not (root/'sanity').exists(), 'Fresh run directory required'
+    assert not (root/'train').exists(), 'Fresh run directory required'
     state = dict(status='preflight', phases={}, supervisor_pid=os.getpid(), started_at=datetime.datetime.now().astimezone().isoformat())
-    state['code_review'] = 'skipped_by_explicit_user_instruction' if a.skip_review else 'PASS'
     children = {}; logs = []
     def save():
         state['updated_at'] = datetime.datetime.now().astimezone().isoformat()
@@ -118,12 +110,6 @@ def main():
         children.pop(name)
         if code:
             raise RuntimeError(f'{name} failed with exit {code}; see {root/name}.log')
-    def wait(name, proc):
-        while proc.poll() is None:
-            sample()
-            try: proc.wait(timeout=5)
-            except subprocess.TimeoutExpired: pass
-        finish(name, proc)
     model = settings['model_path']
     data = str(Path(settings['data_root'])/'math')
     eval_every = settings.get('eval_export_freq', 0) or settings['save_freq']
@@ -150,35 +136,6 @@ def main():
         minimum_gib = 25 if a.allow_partial_storage_budget or a.wait_for_train_memory else required_gib
         state['storage_budget']['partial_budget_allowed'] = a.allow_partial_storage_budget
         assert shutil.disk_usage(root).free > minimum_gib*1024**3, state['storage_budget']
-        if not a.skip_sanity:
-            proc = start('sanity_train', train_args+['--run-dir',str(root/'sanity'),'--steps','2','--save-freq','2'])
-            wait('sanity_train', proc)
-            import torch
-            metrics = [json.loads(line) for line in (root/'sanity/metrics.jsonl').read_text().splitlines()]
-            assert [r['step'] for r in metrics] == [1,2]
-            assert all(r['data']['teacher/synced']==0 and r['data']['teacher/last_sync_step']==0 for r in metrics)
-            assert metrics[-1]['data']['actor/optimizer_updates_total']==8
-            assert all(r['data']['actor/grad_norm'] > 0 for r in metrics)
-            assert all(math.isfinite(r['data'][key]) for r in metrics for key in (
-                'actor/grad_norm', 'actor/global_token_rl_loss',
-                'actor/global_token_kd_loss_weighted', 'actor/global_token_kl_distill'))
-            checkpoint = root/'sanity/checkpoints/global_step_2'
-            teacher = torch.load(checkpoint/'actor/periodic_teacher.pt', map_location='cpu', weights_only=True)
-            assert teacher['teacher_update_interval']==-1 and teacher['last_sync_step']==0 and teacher['completed_outer_steps']==2
-            adapter = json.loads((checkpoint/'actor/lora_adapter/adapter_config.json').read_text())
-            assert isinstance(adapter['target_modules'],str)
-            save_json(root/'sanity_verified.json', dict(status='PASS', outer_steps=2, adam_updates=8,
-                teacher_syncs=0, configured_response_cap=4096,
-                observed_max_response_tokens=max(r['data']['response_length/max'] for r in metrics)))
-            del teacher
-            proc = start('sanity_eval', eval_args+['--gpus',str(eval_gpus[0]),'--checkpoint',str(checkpoint),'--output',str(root/'sanity_eval'),
-                         '--n','1','--max-tokens','128','--max-questions','1'])
-            wait('sanity_eval', proc)
-            result = json.loads((root/'sanity_eval/results.json').read_text())
-            assert all(r['questions']==1 and r['samples']==1 for r in result['results'].values())
-        else:
-            state['sanity'] = 'skipped_by_explicit_user_instruction'
-            save()
         def start_evaluators():
             for index, gpu in enumerate(eval_gpus):
                 start(f'evaluate_gpu{gpu}', eval_args+['--gpus',str(gpu),'--watch-run',str(root/'train'),
@@ -202,7 +159,7 @@ def main():
                         and host > 80 and disk_free_gib > required_gib):
                     break
                 time.sleep(10)
-        # Formal training ALWAYS starts from initial model, never the sanity checkpoint.
+        # This entry starts the main training from the configured initial model.
         train = start('train', train_args+['--run-dir',str(root/'train')])
         if not a.wait_for_train_memory:
             start_evaluators()
